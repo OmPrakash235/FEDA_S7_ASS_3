@@ -1,0 +1,62 @@
+<!--When you submit the Form show all the Details in a Bootstrap table.-->
+
+<html>
+	<head>
+		<title>BootStrap</title>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<div id="dataForm" class="row">
+				<div class="col-sm-4"></div>
+				<div class="col-sm-4">
+					<h3>Registration Form</h3>
+					<form role="form" class="form-horizontal">
+						<div class="row form-group">
+							<input id="frmName" type="text" class="form-control" placeholder="Name"/>
+						</div>
+						<div class="row form-group">
+							<input id="frmEmail" type="email" class="form-control" placeholder="Email"/>
+						</div>
+						<div class="row form-group">
+							<input id="frmDob" type="date" class="form-control" placeholder="Date of Birth"/>
+						</div>
+						<div class="row form-group">
+							<button id="frmBtn" type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal" onclick="showData()">Submit</button>
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-4"></div>
+			</div>
+			<div id="dataTable" class="row" style="display: none">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
+					<table class="table">
+						<tr>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Date of Birth</th>
+						</tr>
+						<tr>
+							<td id="txtName"></td>
+							<td id="txtEmail"></td>
+							<td id="txtDob"></td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-sm-3"></div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function showData(){
+			$('#txtName').text($('#frmName').val());
+			$('#txtEmail').text($('#frmEmail').val());
+			$('#txtDob').text($('#frmDob').val());
+			$('#dataForm').css('display','none');
+			$('#dataTable').css('display','block');
+		}
+	</script>
+</html>
